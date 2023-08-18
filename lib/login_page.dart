@@ -24,12 +24,12 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   width: 128,
                   height: 128,
-                  child: Image.asset("assets/imagens/user.png"),
+                  child: Image.asset("assets/images/user.png"),
                 ),
                 const SizedBox(height: 16.0),
-                TextFormField(
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
+                const TextField(
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
                     labelText: 'Usuário',
                     labelStyle: TextStyle(color: Colors.white),
                     prefixIcon: Icon(Icons.person, color: Colors.white),
@@ -39,10 +39,11 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                TextFormField(
-                  style: const TextStyle(color: Colors.white),
+                const TextField(
+                  style: TextStyle(color: Colors.white),
                   obscureText: true,
-                  decoration: const InputDecoration(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
                     labelText: 'Senha',
                     labelStyle: TextStyle(color: Colors.white),
                     prefixIcon: Icon(Icons.lock, color: Colors.white),
@@ -51,30 +52,29 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 TextButton(
                   onPressed: () {
 
                   },
-                  child: Text(
+                  child: const Text(
                     'Esqueceu a senha?',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                SizedBox(height: 32.0),
+                const SizedBox(height: 32.0),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => HomeScreen()),
                     );
-                  },
+                  }, 
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    onPrimary: Colors.black,
+                    foregroundColor: Colors.black, backgroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                   ),
-                  child: Text('Entrar'),
+                  child: const Text('Entrar'),
                 ),
               ],
             ),
